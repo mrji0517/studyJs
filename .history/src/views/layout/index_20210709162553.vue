@@ -11,15 +11,15 @@
           <i class="el-icon-switch-button"></i>
         </div>
       </el-header>
-      <el-scrollbar style="height: 100%">
-        <el-main>
+      <el-main>
+        <el-scrollbar style="height: 100%">
           <transition name="fade-transform" mode="out-in">
             <keep-alive :include="alives">
               <router-view :key="$route.fullPath" />
             </keep-alive>
           </transition>
-        </el-main>
-      </el-scrollbar>
+        </el-scrollbar>
+      </el-main>
     </el-container>
   </el-container>
 </template>
@@ -57,6 +57,7 @@ export default {
 <style lang="scss" scoped>
 .el-container {
   height: 100%;
+
   .el-header {
     height: 50px;
     box-shadow: 0 1px 4px rgb(0 21 41 / 8%);
@@ -84,11 +85,7 @@ export default {
       }
     }
   }
-  .el-main{
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
+
   .fade-transform-leave-active,
   .fade-transform-enter-active {
     transition: all 0.5s;

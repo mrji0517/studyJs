@@ -57,6 +57,7 @@ export default {
 <style lang="scss" scoped>
 .el-container {
   height: 100%;
+  overflow-x: hidden;
   .el-header {
     height: 50px;
     box-shadow: 0 1px 4px rgb(0 21 41 / 8%);
@@ -84,11 +85,7 @@ export default {
       }
     }
   }
-  .el-main{
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
+
   .fade-transform-leave-active,
   .fade-transform-enter-active {
     transition: all 0.5s;

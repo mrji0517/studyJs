@@ -11,7 +11,7 @@
           <i class="el-icon-switch-button"></i>
         </div>
       </el-header>
-      <el-scrollbar style="height: 100%">
+      <!-- <el-scrollbar style="height: 100%"> -->
         <el-main>
           <transition name="fade-transform" mode="out-in">
             <keep-alive :include="alives">
@@ -19,7 +19,7 @@
             </keep-alive>
           </transition>
         </el-main>
-      </el-scrollbar>
+      <!-- </el-scrollbar> -->
     </el-container>
   </el-container>
 </template>
@@ -85,8 +85,6 @@ export default {
     }
   }
   .el-main{
-    width: 100%;
-    height: 100%;
     overflow: hidden;
   }
   .fade-transform-leave-active,

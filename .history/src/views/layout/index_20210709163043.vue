@@ -84,11 +84,7 @@ export default {
       }
     }
   }
-  .el-main{
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
+
   .fade-transform-leave-active,
   .fade-transform-enter-active {
     transition: all 0.5s;

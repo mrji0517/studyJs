@@ -1,6 +1,6 @@
 <template>
   <el-container>
-    <SideBar />
+    <SideBar/>
     <el-container>
       <el-header>
         <div class="hamburger" @click="isCollapseMenu">
@@ -11,52 +11,53 @@
           <i class="el-icon-switch-button"></i>
         </div>
       </el-header>
-      <el-scrollbar style="height: 100%">
-        <el-main>
-          <transition name="fade-transform" mode="out-in">
-            <keep-alive :include="alives">
-              <router-view :key="$route.fullPath" />
-            </keep-alive>
-          </transition>
-        </el-main>
-      </el-scrollbar>
+      <el-main>
+        <transition name="fade-transform" mode="out-in">
+          <keep-alive :include="alives">
+            <router-view :key="$route.fullPath"/>
+          </keep-alive>
+        </transition>
+      </el-main>
     </el-container>
   </el-container>
 </template>
 
 <script>
-import SideBar from "./components/sideBar";
-import { mapMutations } from "vuex";
+import SideBar from './components/sideBar';
+import {mapMutations} from 'vuex'
 
 export default {
   name: "index",
   components: {
-    SideBar,
+    SideBar
   },
   data() {
     return {
       flag: false,
-      alives: ["keepAlive"],
-    };
+      alives: [
+        'keepAlive'
+      ],
+    }
   },
   methods: {
     ...mapMutations({
-      updateCollapse: "menu/UPDATE_ISCOLLAPSE",
+      updateCollapse: 'menu/UPDATE_ISCOLLAPSE'
     }),
     isCollapseMenu() {
       this.flag = !this.flag;
       this.updateCollapse(this.flag);
     },
     logout() {
-      this.$router.replace("/login");
+      this.$router.replace('/login');
     },
-  },
-};
+  }
+}
 </script>
 
 <style lang="scss" scoped>
 .el-container {
   height: 100%;
+
   .el-header {
     height: 50px;
     box-shadow: 0 1px 4px rgb(0 21 41 / 8%);
@@ -76,7 +77,7 @@ export default {
       cursor: pointer;
 
       &:hover {
-        color: #f56c6c;
+        color: #F56C6C;
       }
 
       &:active {
@@ -84,14 +85,10 @@ export default {
       }
     }
   }
-  .el-main{
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
+
   .fade-transform-leave-active,
   .fade-transform-enter-active {
-    transition: all 0.5s;
+    transition: all .5s;
   }
 
   .fade-transform-enter {
@@ -104,4 +101,5 @@ export default {
     transform: translateX(30px);
   }
 }
+
 </style>
