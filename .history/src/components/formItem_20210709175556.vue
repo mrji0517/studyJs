@@ -195,7 +195,7 @@ export default {
 };
 </script>
 
-<style lang='scss'>
+<style lang='scss' scoped>
 .form-item {
   .el-scrollbar__wrap {
     overflow-x: scroll;

@@ -116,9 +116,9 @@ export default {
         this.tableData.push({
           date: "2016-05-17",
           name: "Alex",
-          school: "北京邮电大学",
+          school: "南京邮电大学",
           job: "nttdata",
-          sex: "女",
+          sex: "男",
           address: "上海市普陀区金沙江路 3000 弄",
         });
       }

@@ -61,33 +61,21 @@ export default {
         {
           date: "2016-05-02",
           name: "王小虎",
-          school: "南京邮电大学",
-          job: "nttdata",
-          sex: "男",
           address: "上海市普陀区金沙江路 1518 弄",
         },
         {
           date: "2016-05-04",
           name: "王小虎",
-          school: "南京邮电大学",
-          job: "nttdata",
-          sex: "男",
           address: "上海市普陀区金沙江路 1517 弄",
         },
         {
           date: "2016-05-01",
           name: "王小虎",
-          school: "南京邮电大学",
-          job: "nttdata",
-          sex: "男",
           address: "上海市普陀区金沙江路 1519 弄",
         },
         {
           date: "2016-05-03",
           name: "王小虎",
-          school: "南京邮电大学",
-          job: "nttdata",
-          sex: "男",
           address: "上海市普陀区金沙江路 1516 弄",
         },
       ],
@@ -116,9 +104,6 @@ export default {
         this.tableData.push({
           date: "2016-05-17",
           name: "Alex",
-          school: "北京邮电大学",
-          job: "nttdata",
-          sex: "女",
           address: "上海市普陀区金沙江路 3000 弄",
         });
       }
