@@ -98,7 +98,7 @@ export default {
       let tmp = window.screen.height - 255;
       return tmp;
     },
-  }, 
+  },
   methods: {
     handleEdit(index, row) {
       console.log(index, row);

@@ -1,0 +1,41 @@
+{
+    "data": {
+      "one": [
+        {
+          "w": "50%",
+          "txt": "KA Account Head",
+          "val":"陕西宝胜新公司neo购物店"
+        },
+        {
+            "w": "50%",
+            "txt": "Project Code",
+            "val":"ALEX-9527-XX"
+          } ,
+          {
+            "w": "25%",
+            "txt": "First Open Date",
+            "val":"2018/07/14"
+          },
+          {
+            "w": "25%",
+            "txt": "Cue Apply Date",
+            "val":"2021/07/14"
+          },
+          {
+            "w": "50%",
+            "txt": "Operation period",
+            "val":"3 years"
+          },
+          {
+            "w": "25%",
+            "txt": "Store Fomate",
+            "val":"Neo S"
+          },
+          {
+            "w": "25%",
+            "txt": "Fixture Owner",
+            "val":"Adidas"
+          },
+      ]
+    }
+  }

@@ -1,0 +1,16 @@
+{
+    "data": {
+      "one": [
+        {
+          "w": "50%",
+          "txt": "KA Account Head",
+          "val":"陕西宝胜新公司neo购物店"
+        },
+        {
+            "w": "50%",
+            "txt": "Project Code",
+            "val":"ALEX-9527-XX"
+          }
+      ]
+    }
+  }

@@ -261,7 +261,7 @@ export const routes = [{
             meta: {
                 title: '阿迪页面',
             },
-            component: () => import('../views/instance/adidas/newPage.vue')
+            component: () => import('../views/instance/syzg/map.vue')
         }]
     },
     {

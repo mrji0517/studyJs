@@ -248,30 +248,7 @@ export const routes = [{
                 title: '特殊表格',
             },
             component: () => import('../views/instance/adidas/tableSpecail.vue')
-        }, {
-            path: 'syzg',
-            name: 'syzg',
-            meta: {
-                title: 'syzg',
-            },
-            component: () => import('../views/instance/syzg/map.vue')
-        }, {
-            path: 'adidasPage',
-            name: 'adidasPage',
-            meta: {
-                title: '阿迪页面',
-            },
-            component: () => import('../views/instance/adidas/newPage.vue')
         }]
-    },
-    {
-        path: '/interview',
-        meta: {
-            icon: 'el-icon-s-promotion',
-            title: '面试题',
-        },
-        component: Layout,
-        children: []
     },
 ]
 const router = new VueRouter({
