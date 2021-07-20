@@ -1,10 +1,12 @@
 <template>
   <div class="wrapper">
-    <div class="header">延用原来的头部内容...</div>
+    <div class="header">
+      
+    </div>
     <transition name="el-zoom-in-top">
       <div class="center" v-show="pack">
         <div id="left"></div>
-        <div class="right">与原右侧页面不变...</div>
+        <div class="right"></div>
       </div>
     </transition>
     <div class="btn">
@@ -14,31 +16,12 @@
       </span>
     </div>
     <div class="footer">
-      <div class="title">POS DETAILS</div>
-      <div class="table">
-        <div class="content">
-          <div class="row" v-for="i of 4" :key="i">
-            <template v-if="footData.length && i !== 4">
-              <p v-for="a of 3" :key="a">
-                <span class="txt"> {{ footData[i * 3 - 4 + a].txt }}: </span>
-                <span class="val">
-                  {{ footData[i * 3 - 4 + a].val }}
-                </span>
-              </p>
-            </template>
-            <template v-if="footData.length && i === 4">
-              <p>
-                <span class="txt">
-                  {{ footData[9].txt }}
-                </span>
-                <span class="val">
-                  {{ footData[9].val }}
-                </span>
-              </p>
-            </template>
-          </div>
-        </div>
-      </div>
+      <p v-for="(i, index) in footData" :key="index" :style="{ width: i.w }">
+        <span class="txt"> {{ i.txt }}: </span>
+        <span class="val">
+          {{ i.val }}
+        </span>
+      </p>
     </div>
   </div>
 </template>
@@ -66,13 +49,6 @@ export default {
     getFootData() {
       this.pieData = JSON.parse(JSON.stringify(footD)).data.two;
       this.footData = JSON.parse(JSON.stringify(footD)).data.one;
-      this.pieData.forEach((a,i)=>{
-        var o={
-          color:"#465957",
-          opacity:1-i/10*2
-        }
-        a.itemStyle=o
-      })
     },
     initChart() {
       var chartDom = document.getElementById("left");
@@ -94,7 +70,7 @@ export default {
           {
             name: "PIE",
             type: "pie",
-            radius: ["40%", "60%"],
+            radius: ["50%", "60%"],
             data: this.pieData,
             emphasis: {
               itemStyle: {
@@ -107,6 +83,7 @@ export default {
         ],
       };
       this.myChart.setOption(option);
+      
     },
     chartResize() {
       if (this.myChart) {
@@ -120,24 +97,24 @@ export default {
 <style scoped lang="scss">
 .wrapper {
   width: 100%;
+  height: 100%;
   padding-right: 20px;
   font-size: 30px;
+  display: flex;
+  flex-direction: column;
   .header {
     width: 100%;
-    height: 160px;
+    height: 20%;
     font-size: 30px;
     background: #ccc;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #979797;
-    margin-bottom: 20px;
   }
   .center {
     width: 100%;
-    height: 300px;
+    height: 40%;
     display: flex;
-    border: 1px solid #979797;
     #left {
       flex: 1;
       margin-right: 38px;
@@ -145,65 +122,23 @@ export default {
     .right {
       flex: 2;
       background: #eee;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
   }
   .footer {
-    height: 400px;
+    font-size: 16px;
     display: flex;
     flex-wrap: wrap;
-    font-size: 16px;
-    margin-top: 20px;
-    border: 1px solid #979797;
-    .title {
-      height: 49px;
-      width: 100%;
-      line-height: 50px;
-      padding-left: 20px;
-      border-bottom: 1px solid #ececec;
-    }
-    .table {
-      height: 350px;
-      width: 100%;
-      padding: 53px;
-      .content {
-        width: 100%;
-        height: 100%;
-        border: 1px solid #979797;
-        display: flex;
-        flex-direction: column;
-        .row {
-          height: 53px;
-          line-height: 53px;
-          display: flex;
-          border-bottom: 1px solid #979797;
-          &:nth-of-type(4) {
-            border: 0;
-            flex: 1;
-          }
-        }
-      }
-    }
     .txt {
-      height: 100%;
-      text-align: center;
       color: #999;
-      width: 168px;
-      background: #fee7c5;
-      border-right: 1px solid #979797;
     }
     .val {
-      flex: 1;
-      padding-left: 16px;
       font-size: 18px;
-      font-weight: 500;
-      border-right: 1px solid #979797;
+      font-weight: bold;
     }
     p {
-      flex: 1;
-      display: flex;
+      display: inline-block;
+      height: 48px;
+      line-height: 48px;
     }
   }
   .btn {

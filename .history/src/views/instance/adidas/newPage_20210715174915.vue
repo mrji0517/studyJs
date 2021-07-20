@@ -68,8 +68,7 @@ export default {
       this.footData = JSON.parse(JSON.stringify(footD)).data.one;
       this.pieData.forEach((a,i)=>{
         var o={
-          color:"#465957",
-          opacity:1-i/10*2
+          color:rgba()
         }
         a.itemStyle=o
       })
@@ -94,7 +93,7 @@ export default {
           {
             name: "PIE",
             type: "pie",
-            radius: ["40%", "60%"],
+            radius: ["50%", "60%"],
             data: this.pieData,
             emphasis: {
               itemStyle: {

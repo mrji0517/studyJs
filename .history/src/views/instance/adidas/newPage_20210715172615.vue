@@ -66,13 +66,6 @@ export default {
     getFootData() {
       this.pieData = JSON.parse(JSON.stringify(footD)).data.two;
       this.footData = JSON.parse(JSON.stringify(footD)).data.one;
-      this.pieData.forEach((a,i)=>{
-        var o={
-          color:"#465957",
-          opacity:1-i/10*2
-        }
-        a.itemStyle=o
-      })
     },
     initChart() {
       var chartDom = document.getElementById("left");
@@ -94,7 +87,7 @@ export default {
           {
             name: "PIE",
             type: "pie",
-            radius: ["40%", "60%"],
+            radius: ["50%", "60%"],
             data: this.pieData,
             emphasis: {
               itemStyle: {

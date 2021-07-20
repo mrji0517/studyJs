@@ -18,24 +18,23 @@
       <div class="table">
         <div class="content">
           <div class="row" v-for="i of 4" :key="i">
-            <template v-if="footData.length && i !== 4">
-              <p v-for="a of 3" :key="a">
+            <template v-if="i !== 4">
+              <p v-for="a of 3" :key="a" >
                 <span class="txt"> {{ footData[i * 3 - 4 + a].txt }}: </span>
                 <span class="val">
                   {{ footData[i * 3 - 4 + a].val }}
                 </span>
               </p>
             </template>
-            <template v-if="footData.length && i === 4">
-              <p>
-                <span class="txt">
-                  {{ footData[9].txt }}
-                </span>
-                <span class="val">
-                  {{ footData[9].val }}
-                </span>
-              </p>
-            </template>
+
+            <p v-if="i === 4">
+              <span class="txt">
+                {{ footData[9].txt }}
+              </span>
+              <span class="val">
+                {{ footData[9].val }}
+              </span>
+            </p>
           </div>
         </div>
       </div>
@@ -66,13 +65,6 @@ export default {
     getFootData() {
       this.pieData = JSON.parse(JSON.stringify(footD)).data.two;
       this.footData = JSON.parse(JSON.stringify(footD)).data.one;
-      this.pieData.forEach((a,i)=>{
-        var o={
-          color:"#465957",
-          opacity:1-i/10*2
-        }
-        a.itemStyle=o
-      })
     },
     initChart() {
       var chartDom = document.getElementById("left");
@@ -94,7 +86,7 @@ export default {
           {
             name: "PIE",
             type: "pie",
-            radius: ["40%", "60%"],
+            radius: ["50%", "60%"],
             data: this.pieData,
             emphasis: {
               itemStyle: {

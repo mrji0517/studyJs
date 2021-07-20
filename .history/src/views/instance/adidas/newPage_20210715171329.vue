@@ -18,24 +18,26 @@
       <div class="table">
         <div class="content">
           <div class="row" v-for="i of 4" :key="i">
-            <template v-if="footData.length && i !== 4">
-              <p v-for="a of 3" :key="a">
+            <template v-for="a of 3">
+              <p :key="a" v-if="i !== 4">
                 <span class="txt"> {{ footData[i * 3 - 4 + a].txt }}: </span>
                 <span class="val">
                   {{ footData[i * 3 - 4 + a].val }}
                 </span>
               </p>
             </template>
-            <template v-if="footData.length && i === 4">
-              <p>
-                <span class="txt">
-                  {{ footData[9].txt }}
-                </span>
-                <span class="val">
-                  {{ footData[9].val }}
-                </span>
-              </p>
-            </template>
+            <p v-if="i === 4">
+              <span class="txt">
+                {{ footData[9].txt }}
+              </span>
+              <span class="val">
+                {{ footData[9].txt }}
+              </span>
+            </p>
+            <!-- <span class="txt"> {{ i.txt }}: </span>
+            <span class="val">
+              {{ i.val }}
+            </span> -->
           </div>
         </div>
       </div>
@@ -66,13 +68,6 @@ export default {
     getFootData() {
       this.pieData = JSON.parse(JSON.stringify(footD)).data.two;
       this.footData = JSON.parse(JSON.stringify(footD)).data.one;
-      this.pieData.forEach((a,i)=>{
-        var o={
-          color:"#465957",
-          opacity:1-i/10*2
-        }
-        a.itemStyle=o
-      })
     },
     initChart() {
       var chartDom = document.getElementById("left");
@@ -94,7 +89,7 @@ export default {
           {
             name: "PIE",
             type: "pie",
-            radius: ["40%", "60%"],
+            radius: ["50%", "60%"],
             data: this.pieData,
             emphasis: {
               itemStyle: {
@@ -181,29 +176,27 @@ export default {
           border-bottom: 1px solid #979797;
           &:nth-of-type(4) {
             border: 0;
-            flex: 1;
+            flex:1
           }
         }
       }
     }
     .txt {
       height: 100%;
+      display: inline-block;
       text-align: center;
       color: #999;
       width: 168px;
       background: #fee7c5;
-      border-right: 1px solid #979797;
     }
     .val {
-      flex: 1;
+      display: inline-block;
       padding-left: 16px;
       font-size: 18px;
-      font-weight: 500;
-      border-right: 1px solid #979797;
+      font-weight: bold;
     }
     p {
       flex: 1;
-      display: flex;
     }
   }
   .btn {
